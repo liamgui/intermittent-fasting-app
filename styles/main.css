@@ -1,0 +1,61 @@
+
+/*reset css*/
+* {
+    margin: 0;
+}
+ul {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+}
+
+/*universal rules*/
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background-color: #f2e9e1;
+}
+
+/*nav css*/
+div.nav {
+    background-color: #ea8f33;
+    padding-bottom: 0.75em;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 1em 1.5em;
+}
+nav ul li.settings {
+    float: left;
+}
+
+nav ul li.resources {
+    float: right;
+}
+
+nav ul li a {
+    color: #f2e9e1;
+    font-family: 'josefin_sanslight'
+}
+
+
+nav img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+    z-index: 10;
+    
+}
+
+nav img::after {
+    clear: both;
+}
