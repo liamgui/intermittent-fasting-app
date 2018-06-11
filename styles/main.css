@@ -25,7 +25,7 @@ body {
 }
 
 /*nav css*/
-div.nav {
+div#nav {
     background-color: #ea8f33;
     padding-bottom: 0.75em;
 }
@@ -44,18 +44,73 @@ nav ul li.resources {
 
 nav ul li a {
     color: #f2e9e1;
-    font-family: 'josefin_sanslight'
+    font-family: 'josefin_sanslight';
+    font-size: 1.1em;
 }
-
 
 nav img {
     max-width: 100px;
     display: block;
     margin: 0 auto;
     z-index: 10;
-    
 }
 
 nav img::after {
     clear: both;
+}
+
+div#lineafter {
+    margin-top: 1px;
+    height: 0.2em;
+    background-color: #ea8f33;
+    
+}
+
+/* chart */
+div#chart {
+    height: 445px;
+}
+
+
+
+/* button div section */
+
+div#linebefore {
+    margin-bottom: 1px;
+    height: 0.2em;
+    background-color: #ea8f33;
+}
+div#buttondiv {
+    background-color: #ea8f33;
+    padding: 0.4em;
+} 
+
+div#button {
+    background-color: #ea7600;
+    margin: 1em 1.9em 0 1.9em;
+    border: 1px solid #f2e9e1;
+    padding: 0.6em;
+    padding-left: ;
+}
+#button h3#start {
+    text-align: center;
+    font-family: josefin_sanslight; 
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 2em;
+    color: #f2e9e1;
+    padding: 0.1em;
+    padding-top: 0.25em;
+}
+#title { 
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    font-family: josefin_sansregular;
+    color: #f2e9e1;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 1em;
+    margin-bottom: 1.2em;
+    letter-spacing: 0.1em;
 }
