@@ -68,7 +68,25 @@ div#lineafter {
 
 /* chart */
 div#chart {
-    height: 445px;
+    height: 425px;
+}
+
+h2#timer {
+    text-align: center;
+    font-family: comfortaalight;
+    color: #ea7600;
+    font-size: 2.8em;
+    letter-spacing: 0.08em ;
+    margin-top: 0.4em;
+}
+
+#goal {
+    text-align: center;
+    font-family:  comfortaalight;
+    color: #ea7600;
+    font-weight: 100;
+    font-size: 1em;
+    letter-spacing: 0.08em ;
 }
 
 
