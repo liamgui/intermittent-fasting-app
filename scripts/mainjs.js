@@ -12,30 +12,64 @@ var graph7 = document.getElementById("graph7");
 
 var button = document.getElementById("button");
 var startWord = document.getElementById("startWord");
-var currentCount = 0;
+var seconds = 00;
+var minutes = 00;
+var hours = 0;
 var counting = false;
 var interval;
+var start = new Date().getTime(),
+elapsed = '0.0';
 
 
 
 function buttonPress() {
     if (counting === false) {
         console.log("started");
-        interval = setInterval(count, 1000);
+        interval = setInterval(count, 100);
         function count() {
-            ++currentCount;
-            console.log(currentCount);
-            timer.innerHTML = "0:00:0" + currentCount;
-            timer.style.textAlign = "center";
-            timer.style.fontFamily = "comfortaalight";
-            timer.style.color = "#ea7600";
-            timer.style.fontSize = "2.8em";
-            timer.style.letterSpacing = "0.08em" ;
-            timer.style.marginTop = "0.4em";
+            var time = new Date().getTime() - start;
+
+            elapsed = Math.floor(time / 100) / 10;
+            if(Math.round(elapsed) == elapsed) { 
+                elapsed += '.0'; 
+            }
+
+            seconds = Math.floor(elapsed);
+
+            
+            // console.log(elapsed);
+            console.log(seconds);
+            if (seconds <= 9) {
+                timer.innerHTML = hours + ":0" + minutes +":0" + seconds;
+            } else if (seconds >= 10) { 
+                timer.innerHTML = hours + ":0" + minutes +":" + seconds;
+            } 
+            if (seconds >= 60) {
+                seconds = 0;
+                minutes += 1;
+                timer.innerHTML = hours + ":0" + minutes + ":0" + seconds;
+            }
+            if (minutes >= 10) {
+                if (seconds <= 9) {
+                    timer.innerHTML = hours + ":" + minutes +":0" + seconds;
+                } else if (seconds >= 10) { 
+                    timer.innerHTML = hours + ":" + minutes +":" + seconds;
+                } 
+
+            }
+            if (minutes >= 60) {
+                minutes = 0;
+                hours += 1;
+                timer.innerHTML = hours + ":0" + minutes + ":0" + seconds;
+
+            }
+
         }
+                
         startWord.innerHTML = "Stop";
         counting = true;
     } else if (counting === true){
+        console.log("stopped");
         clearInterval(interval);
         counting = false;
         startWord.innerHTML = "Start";
