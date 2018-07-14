@@ -19,8 +19,15 @@ var counting;
 var elapsed;
 var interval;
 var startTime;
+var stopTime;
+var blockTime;
 var times;
 
+
+
+function graphs() {
+    
+}
 
 
 function startTimer() {
@@ -78,41 +85,33 @@ function buttonPress() {
         // console.log("counting = " + counting);
         localStorage.setItem("stopTime", stopTime); // Store it if I want to restart the timer on the next page
         localStorage.setItem("counting", false);
-        storage(startTime, stopTime);
+        blockTime = startTime - stopTime;
+        storage();
 
     }
         
 
 }
 
-function storage(startTime, stopTime) {
-    console.log(startTime);
-    console.log(stopTime);
-    var blockTime = startTime - stopTime;
-    console.log("storage fired");
-    console.log(blockTime);
+function storage() {
+    // console.log(startTime);
+    // console.log(stopTime);
+    // console.log("storage fired");
+    // console.log(blockTime);
     function retrieveTimeArrays() {
         if(localStorage.getItem("times") !== null) {
             times = JSON.parse(localStorage.getItem("times"));
+            times.push({"id":(times.length), "startTime":startTime, "stopTime":stopTime, "blockTime":blockTime});
             console.log(times);
             return
         } else {
             times = new Array;
-            times = [];
-            console.log(times);
+            times = [{"id":0, "startTime":startTime, "stopTime":stopTime, "blockTime":blockTime}];
+            // console.log(times);
             return
         }
     }
-    function createTimeArrays() {
-        retrieveTimeArrays()
-//-------------------------FIX THIS!!!!!!!!!!!!!!!!!!!!!!!!
-            if (times.length = 0) {
-                times.push({"id":0, "startTime":startTime, "stopTime":stopTime, "blockTime":blockTime});
-            }
-            times.push({"id":(times.length + 1), "startTime":startTime, "stopTime":stopTime, "blockTime":blockTime});
-            console.log("now times = " + times);
-    }
-    createTimeArrays();
+    retrieveTimeArrays()
     localStorage.setItem("times", JSON.stringify(times));
 
 
