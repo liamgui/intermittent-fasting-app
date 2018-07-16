@@ -79,6 +79,8 @@ div#lineafter {
 /* chart */
 div#chart {
     height: 415px;
+    margin: 0 auto;
+    position: relative;
 }
 
 h2#timer {
@@ -99,7 +101,69 @@ h2#timer {
     letter-spacing: 0.08em ;
 }
 
+.graphChart {
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 1em;
+    position: absolute;
+    height: 300px;
+    left: 1em;
+    right: 1em;
 
+}
+
+.graphs {
+    position: absolute;
+    bottom: 4em;
+    height: 220px;
+    display: flex;
+    overflow: hidden;
+
+}
+
+#graph1, #graph2, #graph3, #graph4, #graph5, #graph6, #graph7 {
+    margin: 0 0.4em;
+    background-color: #F2A255;
+    width: 2em;
+    /* height: 0; */
+    border-bottom: #ea7600 thin solid;
+    /* border-top: #ea7600 thin solid; */
+    display: inline-block;
+    text-align: center;
+    flex: 7;
+    align-self: flex-end;
+
+}
+
+.graphTimes {
+    margin: 0 auto;
+    margin-top: 2.5em;
+    position: absolute;
+    left: 1em;
+    right: 1em;
+    bottom: 1.9em;
+    display: flex;
+}
+#time1, #time2, #time3, #time4, #time5, #time6, #time7 {
+    display: inline-block;
+    flex: 7;
+    display: block;
+    margin: 0 0.415em;
+    width: 2em;
+}
+.times {
+    text-align: center;
+    font-family: comfortaalight;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    
+}
+
+.hours {
+    font-size: 9.5px;
+}
 
 /* button div section */
 
