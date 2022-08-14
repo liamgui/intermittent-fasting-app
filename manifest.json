@@ -1,0 +1,39 @@
+{
+  "short_name": "iFast",
+  "name": "Intermittent Fasting App",
+    "icons": [{
+    "src": "img/homeScreen48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "img/homeScreen72.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }, {
+    "src": "img/homeScreen96.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }, {
+    "src": "img/homeScreen144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "img/homeScreen168.png",
+    "sizes": "168x168",
+    "type": "image/png"
+  }, {
+    "src": "img/homeScreen192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/intermittent_fasting/"
+
+
+
+
+
+  
+}

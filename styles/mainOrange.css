@@ -32,7 +32,7 @@ a {
 
 }
 a:visited {
-    color: #CCDFFF;
+    color: #f2e9e1;
 }
 
 
@@ -49,12 +49,12 @@ html, body {
     overflow: hidden;
 }
 body {
-    background-color: #CCDFFF;
+    background-color: #f2e9e1;
 }
 
 /*nav css*/
 div#nav {
-    background-color: #3A5685;
+    background-color: #ea8f33;
     padding-bottom: 0.75em;
 }
 
@@ -71,7 +71,7 @@ nav ul li.resources {
 }
 
 nav ul li a {
-    color: #CCDFFF;
+    color: #f2e9e1;
     font-family: 'josefin_sanslight';
     font-size: 1.1em;
 }
@@ -90,7 +90,7 @@ nav img::after {
 div#lineafter {
     margin-top: 1px;
     height: 0.2em;
-    background-color: #3A5685;
+    background-color: #ea8f33;
     
 }
 
@@ -104,59 +104,19 @@ div#chart {
 h2#timer {
     text-align: center;
     font-family: comfortaalight;
-    color: #071D42;
+    color: #ea7600;
     font-size: 3.4em;
     letter-spacing: 0.08em ;
-    margin-top: 0.2em;
+    margin-top: 0.4em;
 }
 
 #hoursToGoal {
     text-align: center;
     font-family:  comfortaalight;
-    color: #071D42;
+    color: #ea7600;
     font-weight: 100;
     font-size: 1em;
     letter-spacing: 0.08em ;
-}
-#startTime {
-    color: #071D42;
-    font-family: josefin_sanslight;
-    margin-top: 0.5em;
-    float: left;
-}
-#goalTime {
-    color: #071D42;
-    font-family: josefin_sanslight;
-    margin-top: 0.5em;
-    float: right;
-}
-#progressBarDiv {
-    margin: 0 auto;
-    display: block;
-    margin-top: 0.5em;
-    padding-bottom: 2em;
-    /* position: relative; */
-    /* height: 1%; */
-    width: 80%;
-    visibility: hidden;
-}
-
-#progressBarContainer {
-    overflow: hidden;
-    height: 1%;
-    position: absolute;
-    background-color: #FFF;
-    max-width: 80%;
-    border-radius: 15px;
-    width: 100%;
-    
-}
-#progressBar {
-    /* height: 1%; */
-    height: 100%;
-    border-radius: 15px;
-    background-color: #071D42;
-    /* width: 10%; */
 }
 #anInputDiv {
     display: block;
@@ -219,11 +179,11 @@ h2#timer {
     margin: 0 0.4em;
 }
 #graph1, #graph2, #graph3, #graph4, #graph5, #graph6, #graph7 {
-    background-color: #345691;
+    background-color: #F2A255;
     /* width: 2em; */
     /* height: 0; */
-    border-bottom: #071D42 thin solid;
-    /* border-top: #071D42 thin solid; */
+    border-bottom: #ea7600 thin solid;
+    /* border-top: #ea7600 thin solid; */
     display: inline-block;
     text-align: center;
     flex: 7;
@@ -248,7 +208,7 @@ h2#timer {
     padding-top: 0.5em;
     font-family: comfortaalight;
     font-size: 0.8em;
-    color: #071D42;
+    color: #545454;
 }
 .graphTimes {
     margin: 0 auto;
@@ -259,7 +219,6 @@ h2#timer {
     right: 1em;
     bottom: 3.5em;
     display: flex;
-    margin-top: 0.5em;
 }
 
 /* chart times (under the dates on charts) */
@@ -269,7 +228,7 @@ h2#timer {
     display: block;
     margin: 0 0.4em;
     width: 2em;
-    align-self: flex-end;
+        align-self: flex-end;
 
 }
 .times {
@@ -326,17 +285,17 @@ div#buttonContainer {
 div#linebefore {
     margin-bottom: 1px;
     height: 0.2em;
-    background-color: #3A5685;
+    background-color: #ea8f33;
 }
 div#buttondiv {
-    background-color: #3A5685;
+    background-color: #ea8f33;
     padding: 0.4em;
 } 
 
 div#button {
-    background-color: #071D42;
+    background-color: #ea7600;
     margin: 1em 1.9em 0 1.9em;
-    border: 1px solid #CCDFFF;
+    border: 1px solid #f2e9e1;
     padding: 0.6em;
     /* padding-left: ; */
 }
@@ -346,7 +305,7 @@ div#button {
     font-weight: 100;
     text-transform: uppercase;
     font-size: 2em;
-    color: #CCDFFF;
+    color: #f2e9e1;
     padding: 0.1em;
     padding-top: 0.25em;
 }
@@ -355,7 +314,7 @@ div#button {
     display: block;
     margin: 0 auto;
     font-family: josefin_sansregular;
-    color: #CCDFFF;
+    color: #f2e9e1;
     text-transform: uppercase;
     font-weight: 300;
     margin-top: 1em;
@@ -374,7 +333,7 @@ div#button {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(242, 247, 255, 0.88); /* Black background with opacity */
+    background-color: rgba(255, 224, 204, 0.9); /* Black background with opacity */
     z-index: 12; /* Specify a stack order in case you're using a different order for other elements */
 }
 
@@ -456,9 +415,9 @@ div#button {
 }
 
 div#save {
-    background-color: #071D42;
+    background-color: #ea7600;
     margin: 2em 3em 0 3em;
-    /* border: 1px solid #CCDFFF; */
+    /* border: 1px solid #f2e9e1; */
     padding: 0.6em;
     /* padding-left: ; */
 }
@@ -469,7 +428,7 @@ div#save {
     font-weight: 100;
     text-transform: uppercase;
     font-size: 2em;
-    color: #CCDFFF;
+    color: #f2e9e1;
     padding: 0.1em;
     padding-top: 0.25em;
 }
@@ -493,8 +452,8 @@ div#save {
     width: 80%;
     margin: 0 auto;
     margin-top: 35%;
-    background-color: #CCDFFF;
-    border: thin solid #071D42;
+    background-color: #f2e9e1;
+    border: thin solid #ea7600;
     border-radius: 0.4em;
 }
 
@@ -522,7 +481,7 @@ div#save {
 /*SETTINGS PAGE*/
 
 #extraPage {
-    background-color: #CCDFFF; /* Black background with opacity */
+    background-color: rgb(255, 224, 204); /* Black background with opacity */
 }
 #extraPage div#nav {
     width: 100%;
@@ -536,7 +495,7 @@ div#save {
     margin-top: 1em;
     font-family: josefin_sanslight;
     font-size: 1.2em;
-    color: #CCDFFF;
+    color: #f2e9e1;
 }
 #settingsh1 {
     /* border-bottom: thin #999 solid; */
@@ -565,7 +524,7 @@ div#save {
     padding-left: 2em;
     padding-top: 1em;
     padding-bottom: 1em;
-    background-color: #345691;
+    background-color: #F2A255;
     /* display: inline-block; */
 }
 
@@ -592,20 +551,16 @@ div#save {
     text-align: center;
 }
 #extraPage #reset {
-    box-shadow: 0px 0px 0px 1px #CCDFFF;
-    background-color: #345691;
+    box-shadow: 0px 0px 0px 1px #f2e9e1;
+    background-color: #F2A255;
     font-size: 0.8em;
-    color: #CCDFFF;
+    color: red;
     /* border-top: thin solid #999; */
     clear: both;
     padding-top: 1em;
     padding-bottom: 1em;
     padding-left: 2em;
 }
-/* #extraPage #reset:visited {
-    color: #FFBABA;
-
-} */
 
 body.resources {
     overflow: visible;
@@ -640,20 +595,12 @@ body.resources {
     padding-bottom: 0.5em;
     margin-bottom: 1em;
     padding-left: 1em;
-    background-color: #345691;
-    color: #CCDFFF;
+    background-color: #F2A255;
+    color: #f2e9e1;
     /* border-top: thin solid black; */
     box-shadow: 0px 0px 0px 1px;
 }
-.resources #otherResourcesLinks li{
-    padding: 1em 0 1em 1em;
-}
-.resources #otherResourcesLinks li a {
-    color: #345691;
-}
-.resources #otherResourcesLinks li a:visited {
-    color: #345691;
-}
+
 #selfTalkImgs {
     /* font-size: 0.8em; */
     /* color: red; */
@@ -675,20 +622,12 @@ body.resources {
 
 @supports (-webkit-overflow-scrolling: touch) {
   /* CSS specific to iOS devices */ 
-  .graphTimes {
-    display: flex;
-  }
-  .times {
-    flex: 7;
-    margin: 0 0.4em;
-  }
   .dates {
-/*     position: absolute; 
-    bottom: 0.8em; */
-    padding-top: 1em;
+    /* position: absolute; */
+    /* bottom: 0.8em; */
+    padding-top: 0.5em;
     font-size: 0.9em;
     margin-bottom: -0.5em;
-    margin-top: 1em;
     
     }
 
@@ -716,13 +655,9 @@ body.resources {
 
     div#save {
     margin: 1.5em 3em 0 3em;
-    /* border: 1px solid #CCDFFF; */
+    /* border: 1px solid #f2e9e1; */
     padding: 0.5em;
     /* padding-left: ; */
-    }
-
-    #progressBarDiv {
-        margin-top: -1em;
     }
 }
 
@@ -731,13 +666,12 @@ body.resources {
 
 /*@Medias*/
 /* IPHONE PLUS / PIXEL */
-
 @media only screen and (min-width: 411px) {
         /* Iphone call */
     h2#timer {
         text-align: center;
         font-family: comfortaalight;
-        color: #071D42;
+        color: #ea7600;
         font-size: 4em;
         letter-spacing: 0.08em ;
         margin-top: 0.4em;
@@ -745,7 +679,7 @@ body.resources {
     #hoursToGoal {
         text-align: center;
         font-family:  comfortaalight;
-        color: #071D42;
+        color: #ea7600;
         font-weight: 100;
         font-size: 1.2em;
         letter-spacing: 0.08em ;
@@ -753,7 +687,7 @@ body.resources {
 
     .graphChart {
         
-        margin-top: 0;
+        margin-top: 1em;
         position: absolute;
         height: 400px;
         left: 1em;
@@ -773,30 +707,28 @@ body.resources {
     }
     @supports (-webkit-overflow-scrolling: touch) {
         .graphs {
-            bottom: 8em;
+            bottom: 10em;
 
         }
-        #timerContainer {
-            margin-top: -1em;
-            margin-bottom: 1em;
-        }
-/*         .times {
+        .times {
             position: absolute;
-            bottom: 5em;
-        } */
-        .graphTimes {
-            position: absolute;
-            bottom: 5.1em;
+            bottom: 3.5em;
         }
         #chartBottom {
             position:absolute;
-            bottom: -4em;
+            bottom: -3em;
         }
+
     }
 }
 
 /* IPAD SIZES */
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 768px) {
+    @supports (-webkit-overflow-scrolling: touch) {
+        h2#timer {
+            margin-bottom: -0.2em;
+        }
+    }
 
     h2#timer {
 
@@ -807,7 +739,7 @@ body.resources {
     #hoursToGoal {
         text-align: center;
         font-family:  comfortaalight;
-        color: #071D42;
+        color: #ea7600;
         font-weight: 100;
         font-size: 1.5em;
         letter-spacing: 0.08em ;
@@ -819,17 +751,13 @@ body.resources {
         
         margin-top: 1em;
         position: absolute;
-        height: 600px;
+        height: 500px;
         left: 1em;
         right: 1em;
 
 
     }
-    
-    .graphTimes {
-        width: 96%;
 
-    }
     #chartBottom {
         /* height: px; */
         position: absolute;
@@ -841,28 +769,6 @@ body.resources {
         /* width: 0em; */
         margin: 0 1em;
         /* max-width: 3em; */
-    }
-    .times {
-        padding: 0 1em;
-        /* width: 0em; */
-        margin: 0 0.5em;
-        margin-left: 2em;
-        /* max-width: 3em; */
-    }
-    @supports (-webkit-overflow-scrolling: touch) {
-        h2#timer {
-            margin-bottom: -0.2em;
-        }
-        .graphTimes {
-            position: absolute;
-            bottom: 5em;
-        }
-        #chartBottom {
-            /* height: px; */
-            position: absolute;
-            /* margin-top: 2em; */
-            bottom: -24em;
-        }
     }
 }
 

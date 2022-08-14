@@ -2,20 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"> -->
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- <meta name="viewport-fit" content="cover"> -->
     <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
     <!-- <meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no"> -->
     <title>Intermittent Fasting</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" type="text/css" href="anyPicker/anypicker.css">
     <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
-    <link rel="icon" sizes="192x192" href="img/homeScreen192.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="img/homeScreen192.png">
-    <link rel="icon" sizes="144x144" href="img/homeScreen144.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/homeScreen144.png">
-    <link rel="manifest" href="manifest.json">
     
     
 </head>
@@ -35,56 +32,76 @@
     <div id="chart">
         <div id="timerContainer">
             <h2 id="timer">--:--:--</h2>
-            <div id="progressBarDiv">
-              <div id="progressBarContainer">
-                <div id="progressBar"></div>
-              </div>
-              <p id="startTime"></p>
-              <p id="goalTime"></p>
-            </div>
-            <!-- <h3 id="hoursToGoal"><span id="hoursRemaining">-</span> hours to goal</h3> -->
+            <h3 id="hoursToGoal"><span id="hoursRemaining">-</span> hours to goal</h3>
             <!-- <input type="text" id="input-4" readonly> -->
         </div>
         <div class="graphChart">
-            <div class="graphs">
-                <div id="graph1" class="graphDiv"></div>
-                <div id="graph2" class="graphDiv"></div>
-                <div id="graph3" class="graphDiv"></div>
-                <div id="graph4" class="graphDiv"></div>
-                <div id="graph5" class="graphDiv"></div>
-                <div id="graph6" class="graphDiv"></div>
-                <div id="graph7" class="graphDiv"></div>
                 <div id="goalLine"><p>Goal: <span id="goalNumber"></span></p></div>
+                <div class="graphite">
+                    <div class="graphs">
+                        <div id="graph1" class="graphDiv"></div>
+                    </div>
+                    <div id="time1" class="times">
+                        <p id="date1" class="dates"></p>
+                        <p id="hour1" class="hours"></p>
+                    </div>
+                </div>
+                <div class="graphite">
+                    <div class="graphs">
+                        <div id="graph2" class="graphDiv"></div>
+                    </div>
+                    <div id="time2" class="times">
+                        <p id="date2" class="dates"></p>
+                        <p id="hour2" class="hours"></p>
+                    </div>
+                </div>
+                <div class="graphite">
+                    <div class="graphs">
+                        <div id="graph3" class="graphDiv"></div>
+                    </div>
+                    <div id="time3" class="times">
+                        <p id="date3" class="dates"></p>
+                        <p id="hour3" class="hours"></p>
+                    </div>
+                </div>
+                <div class="graphite">
+                    <div class="graphs">
+                        <div id="graph4" class="graphDiv"></div>
+                    </div>
+                    <div id="time4" class="times">
+                        <p id="date4" class="dates"></p>
+                        <p id="hour4" class="hours"></p>
+                    </div>
+                </div>
+                <div class="graphite">
+                    <div class="graphs">
+                        <div id="graph5" class="graphDiv"></div>
+                    </div>
+                    <div id="time5" class="times">
+                        <p id="date5" class="dates"></p>
+                        <p id="hour5" class="hours"></p>
+                    </div>
+                </div>
+                <div class="graphite">
+                    <div class="graphs">
+                        <div id="graph6" class="graphDiv"></div>
+                    </div>
+                    <div id="time6" class="times">
+                        <p id="date6" class="dates"></p>
+                        <p id="hour6" class="hours"></p>
+                    </div>
+                </div>
+                <div class="graphite">
+                    <div class="graphs">
+                        <div id="graph7" class="graphDiv"></div>
+                    </div>
+                    <div id="time7" class="times">
+                        <p id="date7" class="dates"></p>
+                        <p id="hour7" class="hours"></p>
+                    </div>
+                </div>
             </div>
             <div class="graphTimes">
-                <div id="time1" class="times">
-                    <p id="date1" class="dates"></p>
-                    <p id="hour1" class="hours"></p>
-                </div>
-                <div id="time2" class="times">
-                    <p id="date2" class="dates"></p>
-                    <p id="hour2" class="hours"></p>
-                </div>
-                <div id="time3" class="times">
-                    <p id="date3" class="dates"></p>
-                    <p id="hour3" class="hours"></p>
-                </div>
-                <div id="time4" class="times">
-                    <p id="date4" class="dates"></p>
-                    <p id="hour4" class="hours"></p>
-                </div>
-                <div id="time5" class="times">
-                    <p id="date5" class="dates"></p>
-                    <p id="hour5" class="hours"></p>
-                </div>
-                <div id="time6" class="times">
-                    <p id="date6" class="dates"></p>
-                    <p id="hour6" class="hours"></p>
-                </div>
-                <div id="time7" class="times">
-                    <p id="date7" class="dates"></p>
-                    <p id="hour7" class="hours"></p>
-                </div>
             </div>
         </div>
         <div id="chartBottom">
@@ -132,26 +149,9 @@
            </div>
        </div>
 
-    
-    </div>
-    
-    <div id="unfocused">
-      <div id="promptBox">
-        <img id="logo" src="img/homeScreen192.png" alt="">
-        <p id="instructions">Please install this Application</p>
-        <img id="instructionsPic" src="img/addToHomeScreen.PNG" alt="">
-      </div>
     </div>
     <script src="scripts/jquery-min.js"></script>
     <script src="anyPicker/anypicker.js"></script>
     <script src="scripts/mainjs.js"></script> 
 </body>
 </html>
-
-
-
-
-
-
-
-
