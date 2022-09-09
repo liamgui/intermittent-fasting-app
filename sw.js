@@ -1,6 +1,6 @@
-// var dataCacheName = 'Intermittent_Fasting';
-// var cacheName = 'Intermittent_Fasting';
-// var filesToCache = [
+// let dataCacheName = 'Intermittent_Fasting';
+// let cacheName = 'Intermittent_Fasting';
+// let filesToCache = [
 //        '/',
 //       '/index.html',
 //       '/settings.html',
@@ -108,7 +108,7 @@
 
 // self.addEventListener('fetch', function(e) {
 //   console.log('[Service Worker] Fetch', e.request.url);
-//   var dataUrl = 'https://query.yahooapis.com/v1/public/yql';
+//   let dataUrl = 'https://query.yahooapis.com/v1/public/yql';
 //   if (e.request.url.indexOf(dataUrl) > -1) {
 //     e.respondWith(
 //       caches.open(dataCacheName).then(function(cache) {
@@ -220,13 +220,13 @@ function precache() {
   });
 }
 
-// Everytime the application requests a resource, return it from cache 
+// Everytime the application requests a resource, return it from cache
 // and try to refresh it afterwards
 self.addEventListener('fetch', function(evt) {
   evt.respondWith(fromCache(evt.request));
   evt.waitUntil(update(evt.request));
 });
- 
+
 function fromCache(request) {
   return caches.open('intermittent_fasting').then(function (cache) {
     return cache.match(request).then(function (matching) {
@@ -250,16 +250,3 @@ function update(request) {
 //     .then( () => alert( 'content is now available offline' ) )
 //     .catch( () => alert( 'oh noes! something went wrong' ) );
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-

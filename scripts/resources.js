@@ -1,30 +1,30 @@
 if ('serviceWorker' in navigator) {navigator.serviceWorker.register('./sw.js').then(function(){console.log('Service Worker Registered');});}
-var mmClicked = false;
-var stClicked = false;
-var orClicked = false;
+let mmClicked = false;
+let stClicked = false;
+let orClicked = false;
 
 
 // -----------------Document Declarations and Storage----------------
 
-var resourcesDiv = document.getElementById("resourcesDiv");
+let resourcesDiv = document.getElementById("resourcesDiv");
 
-var mmImgDiv = document.getElementById("motivatingMomentImgs");
-var stImgDiv = document.getElementById("selfTalkImgs");
-var otherResourcesLinks = document.getElementById("otherResourcesLinks");
-var mmP = document.getElementById("motivatingMomentsP");
-var stP = document.getElementById("selfTalksP");
-var orP = document.getElementById("otherResourcesP");
-var mmUpArrow = document.getElementById("mmUpArrow");
-var stUpArrow = document.getElementById("stUpArrow");
-var orUpArrow = document.getElementById("orUpArrow");
+let mmImgDiv = document.getElementById("motivatingMomentImgs");
+let stImgDiv = document.getElementById("selfTalkImgs");
+let otherResourcesLinks = document.getElementById("otherResourcesLinks");
+let mmP = document.getElementById("motivatingMomentsP");
+let stP = document.getElementById("selfTalksP");
+let orP = document.getElementById("otherResourcesP");
+let mmUpArrow = document.getElementById("mmUpArrow");
+let stUpArrow = document.getElementById("stUpArrow");
+let orUpArrow = document.getElementById("orUpArrow");
 mmUpArrow.style.display = "inline-block";
 stUpArrow.style.display = "inline-block";
 orUpArrow.style.display = "inline-block";
 
-var mmImgArray = document.querySelectorAll("#motivatingMomentImgs img");
-var stImgArray = document.querySelectorAll("#selfTalkImgs img");
+let mmImgArray = document.querySelectorAll("#motivatingMomentImgs img");
+let stImgArray = document.querySelectorAll("#selfTalkImgs img");
 
-var arrayOfArrays = [mmImgArray, stImgArray];
+let arrayOfArrays = [mmImgArray, stImgArray];
 
 //------------------Styles to be hidden--------------------
 mmImgDiv.style.overflow = "hidden";
@@ -55,7 +55,7 @@ resourcesDiv.addEventListener("click", function(e){
             stP.style.marginTop = null;
             mmUpArrow.style.transform = "rotate(90deg)";
             mmUpArrow.style.webkitTransform = "rotate(90deg)";
-    
+
         } else if(mmClicked === true) {
             mmClicked = false;
             mmImgDiv.style.overflow = "hidden";
@@ -73,7 +73,7 @@ resourcesDiv.addEventListener("click", function(e){
             stImgDiv.style.height = "inherit";
             stUpArrow.style.transform = "rotate(90deg)";
             stUpArrow.style.webkitTransform = "rotate(90deg)";
-    
+
         } else if (stClicked === true){
             stClicked = false;
             stImgDiv.style.overflow = "hidden";
@@ -123,14 +123,14 @@ resourcesDiv.addEventListener("click", function(e){
 
                 body.appendChild(overlay);
 
-                overlay.addEventListener("click", function() {body.removeChild(overlay); body.style.overflow = null; 
+                overlay.addEventListener("click", function() {body.removeChild(overlay); body.style.overflow = null;
 }, false);
             }
 
         }
     }
 
-    // for 
+    // for
 }, true);
 
 

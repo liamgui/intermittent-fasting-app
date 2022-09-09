@@ -8,16 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
     <!-- <meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no"> -->
     <title>Intermittent Fasting</title>
-    <link rel="stylesheet" type="text/css" href="anyPicker/anypicker.css">
-    <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
-    <link rel="icon" sizes="192x192" href="img/homeScreen192.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="img/homeScreen192.png">
-    <link rel="icon" sizes="144x144" href="img/homeScreen144.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/homeScreen144.png">
-    <link rel="manifest" href="manifest.json">
     
     
+    
+    <link rel="icon" sizes="192x192" href="/assets/homeScreen192.fa7f548c.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/assets/homeScreen192.fa7f548c.png">
+    <link rel="icon" sizes="144x144" href="/assets/homeScreen144.f65616c3.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/homeScreen144.f65616c3.png">
+    <link rel="manifest" href="data:application/json;base64,ewogICJzaG9ydF9uYW1lIjogImlGYXN0IiwKICAibmFtZSI6ICJJbnRlcm1pdHRlbnQgRmFzdGluZyBBcHAiLAogICAgImljb25zIjogW3sKICAgICJzcmMiOiAiaW1nL2hvbWVTY3JlZW40OC5wbmciLAogICAgInNpemVzIjogIjQ4eDQ4IiwKICAgICJ0eXBlIjogImltYWdlL3BuZyIKICB9LCB7CiAgICAic3JjIjogImltZy9ob21lU2NyZWVuNzIucG5nIiwKICAgICJzaXplcyI6ICI3Mng3MiIsCiAgICAidHlwZSI6ICJpbWFnZS9wbmciCiAgfSwgewogICAgInNyYyI6ICJpbWcvaG9tZVNjcmVlbjk2LnBuZyIsCiAgICAic2l6ZXMiOiAiOTZ4OTYiLAogICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogIH0sIHsKICAgICJzcmMiOiAiaW1nL2hvbWVTY3JlZW4xNDQucG5nIiwKICAgICJzaXplcyI6ICIxNDR4MTQ0IiwKICAgICJ0eXBlIjogImltYWdlL3BuZyIKICB9LCB7CiAgICAic3JjIjogImltZy9ob21lU2NyZWVuMTY4LnBuZyIsCiAgICAic2l6ZXMiOiAiMTY4eDE2OCIsCiAgICAidHlwZSI6ICJpbWFnZS9wbmciCiAgfSwgewogICAgInNyYyI6ICJpbWcvaG9tZVNjcmVlbjE5Mi5wbmciLAogICAgInNpemVzIjogIjE5MngxOTIiLAogICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogIH1dLAogICJzdGFydF91cmwiOiAiaW5kZXguaHRtbCIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0IiwKICAic2NvcGUiOiAiL2ludGVybWl0dGVudF9mYXN0aW5nLyIKCgoKCgogIAp9Cg==">
+    
+    
+  <script type="module" crossorigin src="/assets/index.701b48c7.js"></script>
+  <link rel="stylesheet" href="/assets/index.2535ced0.css">
 </head>
 <body>
 
@@ -27,7 +29,7 @@
                 <li class="settings"><a href="settings.html" title="">settings</a></li>
                 <li class="resources"><a href="resources.html" title="">resources</a></li>
             </ul>
-            <img src="img/if_plate_logo.png" alt="">
+            <img src="/assets/if_plate_logo.c72b3976.png" alt="">
         </nav>
     </div>
     <div id="lineafter"></div>
@@ -95,8 +97,8 @@
     <div id="buttonContainer">
         <div id="linebefore"></div>
         <div id="buttondiv">
-            <div id="button" data-start>
-                <h3 id="start">Start Fasting</h3>
+            <div id="button">
+                <h3 id="start"><span id="startWord">Start</span> Fasting</h3>
             </div>
             <h3 id="title">Intermittent Fasting App</h3>
         </div>
@@ -105,8 +107,8 @@
        <div id="overlayDiv">
             <div id="overlayNav">
                <ul>
-                   <li data-delete>delete</li>
-                   <li data-back>back</li>
+                   <li id="delete">delete</li>
+                   <li id="back">back</li>
            
                </ul>
            </div>
@@ -126,7 +128,7 @@
            <div id="saveDiv">
                <h2>Fasting time: <span id="fastingTime"></span></h2>
                <h2>Goal: <span id="overlayGoal"></span></h2>
-               <div data-save-button>
+               <div id="save">
                    <h3 id="saveH3">Save</h3>
                </div>
            </div>
@@ -137,14 +139,14 @@
     
     <div id="unfocused">
       <div id="promptBox">
-        <img id="logo" src="img/homeScreen192.png" alt="">
+        <img id="logo" src="/assets/homeScreen192.fa7f548c.png" alt="">
         <p id="instructions">Please install this Application</p>
-        <img id="instructionsPic" src="img/addToHomeScreen.PNG" alt="">
+        <img id="instructionsPic" src="/assets/addToHomeScreen.fe97d8fc.PNG" alt="">
       </div>
     </div>
     <script src="scripts/jquery-min.js"></script>
     <script src="anyPicker/anypicker.js"></script>
-    <script src="src/index.ts" type="module"></script>
+     
 </body>
 </html>
 

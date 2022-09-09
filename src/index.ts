@@ -1,3 +1,5 @@
+import AirDatepicker from "air-datepicker";
+
 //main js
 let chart = document.querySelector("[data-chart]");
 let timer = document.querySelector("[data-timer]");
@@ -5,27 +7,29 @@ let timer = document.querySelector("[data-timer]");
 // let hoursRemaining = document.getElementById("hoursRemaining");
 // let anInput = document.getElementById("input-4");
 
-const graphElements = document.querySelectorAll("[data-graph]");
+const graphElements = document.querySelectorAll("[data-graph]") as NodeListOf<HTMLElement> || [];
 const timeElements = document.querySelectorAll("[data-time]");
 let hourElements = document.querySelectorAll("[data-hour]");
 let dateElements = document.querySelectorAll("[data-date]");
-let button = document.getElementById("button");
-let startWord = document.getElementById("startWord");
-let averageHours = document.getElementById("averageHours");
+let button = document.querySelector("[data-start]");
+let averageHours = document.getElementById("averageHours") as HTMLElement | null;
+let averageMinutes = document.getElementById("averageMinutes") as HTMLElement | null;
 let counting;
 let interval;
 let startTime;
 // let stopTime;
 let blockTime;
 // let times;
-let goal = localStorage.getItem("goal");
-if (goal == null || goal == undefined) {
+let goal = parseInt(localStorage.getItem("goal") || "0");
+if (!goal) {
 	goal = 18;
-	localStorage.setItem("goal", 18);
+	localStorage.setItem("goal", goal.toString());
 }
 let goalLine = document.getElementById("goalLine");
 let goalNumber = document.getElementById("goalNumber");
-goalNumber.innerHTML = goal + " hours";
+if (goalNumber) {
+	goalNumber.innerHTML = goal + " hours";
+}
 let lastSevenFasts;
 let editH1 = document.querySelectorAll("#overlayDiv h1")[0];
 
@@ -45,12 +49,12 @@ function startTimer() {
 	minutes = checkTime(minutes); // add a leading zero if it's single digit
 	seconds = checkTime(seconds); // add a leading zero if it's single digit
 	// hours = 01;
-	timer.innerHTML = hours + ":" + minutes + ":" + seconds;
+	if (timer) {
+		timer.innerHTML = hours + ":" + minutes + ":" + seconds;
+	}
 	// document.getElementById("timer").innerHTML = (m + ":" + s ); // update the element where the timer will appear
 	function checkTime(i) {
-		if (i < 10) {
-			i = "0" + i;
-		} // add zero in front of numbers < 10
+		if (i < 10) i = "0" + i; // add zero in front of numbers < 10
 		return i;
 	}
 	//----------------Progress Bar -------------------------
@@ -60,12 +64,11 @@ function startTimer() {
 	//this is 100%
 	let goalMS = goal * 3600000;
 	let xFactor = (elapsed * 100) / goalMS;
-	progressBar.style.width = xFactor + "%";
-	if (xFactor < 1) {
-		progressBar.style.width = "1%";
-	}
+	if (xFactor < 1) xFactor = 1;
+	if (progressBar) progressBar.style.width = xFactor + "%";
+	
 	//---------------Projected Goal time ---------------------
-	let goalTime = document.getElementById("goalTime");
+	let goalTime = document.getElementById("goalTime") as HTMLElement | null;
 	let projectedGoalTime = new Date(goalMS + startTime);
 	// projectedGoalTime = projectedGoalTime.getTime();
 	function convertTime(date) {
@@ -90,11 +93,13 @@ function startTimer() {
 		// let dateString = hours + ":" + minutes + meridiem;
 		return hours + ":" + minutes + " " + meridiem;
 	}
-	goalTime.innerHTML = convertTime(projectedGoalTime);
+	if (goalTime) goalTime.innerHTML = convertTime(projectedGoalTime);
 	//-----------------Started Time-------------------------
 	let startTimeParagraph = document.getElementById("startTime");
 	let startClock = new Date(startTime);
-	startTimeParagraph.innerHTML = convertTime(startClock);
+	if (startTimeParagraph) {
+		startTimeParagraph.innerHTML = convertTime(startClock);
+	}
 	// if ((goal-hours)<0) {
 	//     hoursRemaining.innerHTML = 0;
 	// } else {
@@ -110,8 +115,9 @@ function endTimer() {
 }
 
 function timerOverlay() {
-	let startClock = document.getElementById("startTime");
-	startClock.addEventListener("click", function () {
+	let startClock = document.getElementById("startTime") as HTMLElement | null;
+	// if (startClock) {
+	startClock?.addEventListener("click", function () {
 
 		// anInput.style.zIndex = "1000";
 		let minStartTime = new Date(startTime);
@@ -129,14 +135,16 @@ function timerOverlay() {
 		startTimeH2.innerHTML = "Start Time";
 		timerOverlay.appendChild(startTimeH2);
 		startTimeH2.setAttribute("id", "startTimeH2");
+
 		let anInputDiv = document.createElement("div");
+		
 		let anInput = document.createElement("input");
 		timerOverlay.appendChild(anInputDiv);
 		anInputDiv.appendChild(anInput);
 		anInputDiv.setAttribute("id", "anInputDiv");
 		anInput.setAttribute("type", "text");
 		anInput.setAttribute("id", "input-4");
-		anInput.readonly = true;
+		anInput.readOnly = true;
 		// anInput.style.display = "inline";
 		// anInput.style.zIndex = "1000";
 
@@ -145,28 +153,29 @@ function timerOverlay() {
 			minStartTime = new Date();
 		};
 		checkTime();
-		$("#input-4").AnyPicker({
-			mode: "datetime",
-			// maxValue: new Date(000000),
-			// minValue: minStartTime,
-			selectedDate: new Date(startTime),
-			inputDateTimeFormat: "DDD M/dd h:mm AA",
-			dateTimeFormat: "MMM dd h:mm AA",
-			onSetOutput: function (sOutput, oSelectedValues) {
-				if (oSelectedValues.date.getTime() > minStartTime) {
-					anInput.style.color = "red";
-					return;
-				}
-				startTime = oSelectedValues.date;
-				startTime = startTime.getTime();
+		const datePicker = new AirDatepicker(anInput);
+		// $("#input-4").AnyPicker({
+		// 	mode: "datetime",
+		// 	// maxValue: new Date(000000),
+		// 	// minValue: minStartTime,
+		// 	selectedDate: new Date(startTime),
+		// 	inputDateTimeFormat: "DDD M/dd h:mm AA",
+		// 	dateTimeFormat: "MMM dd h:mm AA",
+		// 	onSetOutput: function (sOutput, oSelectedValues) {
+		// 		if (oSelectedValues.date.getTime() > minStartTime) {
+		// 			anInput.style.color = "red";
+		// 			return;
+		// 		}
+		// 		startTime = oSelectedValues.date;
+		// 		startTime = startTime.getTime();
 
-				localStorage.setItem("startTime", startTime);
-				document.querySelectorAll("body")[0].removeChild(timerOverlay);
+		// 		localStorage.setItem("startTime", startTime);
+		// 		document.querySelectorAll("body")[0].removeChild(timerOverlay);
 
-				// currentlyCounting();
-				// updateOverlayFastingTime(startDate, endDate);
-			},
-		});
+		// 		// currentlyCounting();
+		// 		// updateOverlayFastingTime(startDate, endDate);
+		// 	},
+		// });
 
 		timerOverlay.addEventListener("click", function () {
 			document.querySelectorAll("body")[0].removeChild(timerOverlay);
@@ -177,6 +186,7 @@ function timerOverlay() {
 
 //REWRITE this function - clean up
 function buttonPress() {
+	let progressBar = document.getElementById("progressBar") as HTMLElement | null;
 	if (counting === false) {
 		startTime = Math.floor(Date.now());
 
@@ -185,24 +195,25 @@ function buttonPress() {
 		// let startHours = (startTime / 3600000) //Get the starting time (right now) in seconds
 		counting = true;
 		localStorage.setItem("startTime", startTime); // Store it if I want to restart the timer on the next page
-		localStorage.setItem("counting", true);
-		document.getElementById("progressBarDiv").style.visibility = "visible";
+		localStorage.setItem("counting", "true");
+		if (progressBar) {
+			progressBar.style.visibility = "visible";
+		}
 		startTimer();
 		timerOverlay();
 		// }
-
-		startWord.innerHTML = "Stop";
+		if (button) button.innerHTML = "Stop Fasting";
 	} else if (counting === true) {
 		let stopTime = new Date().getTime();
-		document.getElementById("progressBarDiv").style.visibility = "hidden";
-		startWord.innerHTML = "Start";
+		if (progressBar) progressBar.style.visibility = "hidden";
+		if (button) button.innerHTML = "Start Fasting";
 		endTimer();
 		counting = false;
-		localStorage.setItem("stopTime", stopTime); // Store it if I want to restart the timer on the next page
-		localStorage.setItem("counting", false);
+		localStorage.setItem("stopTime", stopTime.toString()); // Store it if I want to restart the timer on the next page
+		localStorage.setItem("counting", "false");
 		blockTime = stopTime - startTime;
 		storage(startTime, stopTime);
-		let fastingTimes = JSON.parse(localStorage.getItem("times"));
+		let fastingTimes = JSON.parse(localStorage.getItem("times") || "[]");
 		// debugger;
 		if (lastSevenFasts !== null && lastSevenFasts !== undefined) {
 			// if (lastSevenFasts[lastSevenFasts.length]) {
@@ -226,16 +237,16 @@ function storage(startTime, stopTime) {
 	let times;
 	function retrieveTimeArrays() {
 		if (localStorage.getItem("times") !== null) {
-			times = JSON.parse(localStorage.getItem("times"));
-			let id = parseInt(localStorage.getItem("id"));
+			times = JSON.parse(localStorage.getItem("times") || "[]");
+			let id = parseInt(localStorage.getItem("id") || "0");
 			id += 1;
 			times.push({ "id": id, "startTime": startTime, "stopTime": stopTime, "blockTime": blockTime });
-			localStorage.setItem("id", id);
+			localStorage.setItem("id", id.toString());
 			return;
 		} else {
 			times = new Array();
 			times = [{ "id": 1, "startTime": startTime, "stopTime": stopTime, "blockTime": blockTime }];
-			localStorage.setItem("id", 1);
+			localStorage.setItem("id", "1");
 			return;
 		}
 	}
@@ -245,7 +256,7 @@ function storage(startTime, stopTime) {
 
 // update visual graphs
 function graphs() {
-	let times = JSON.parse(localStorage.getItem("times"));
+	let times = JSON.parse(localStorage.getItem("times") || "[]");
 	let lastTimes = times;
 	function shiftLastTimes() {
 		for (let i in times) {
@@ -258,12 +269,12 @@ function graphs() {
 		}
 	}
 	shiftLastTimes();
-	if (lastTimes == null || lastTimes == undefined) {
+	if (!lastTimes) {
 		hourElements[0].innerHTML = "";
 		dateElements[0].innerHTML = "";
 		graphElements[0].style.height = "0px";
-		averageHours.innerHTML = "0";
-		averageMinutes.innerHTML = "0";
+		if (averageHours) averageHours.innerHTML = "0";
+		if (averageMinutes) averageMinutes.innerHTML = "0";
 		return;
 	}
 	// for (let i in lastTimes) {
@@ -274,6 +285,7 @@ function graphs() {
 
 	lastSevenFasts = lastTimes;
 
+	//setting heights
 	let graphHeight = document.getElementsByClassName("graphs")[0].offsetHeight;
 	let xFactor = ((80 / 100) * graphHeight) / goal;
 	let goalHeight = goal * xFactor;
@@ -544,13 +556,12 @@ function deleteFunction(graph, fast) {
 // }
 
 function prompt() {
-	if (!navigator.standalone) {
-		let unfocused = document.getElementById("unfocused");
-		unfocused.style.display = "block";
-		let promptBox = document.getElementById("promptBox");
-		unfocused.addEventListener(
-			"click",
-			function (event) {
+	if (!window.matchMedia('(display-mode: standalone)').matches) {
+		let unfocused = document.querySelector("#unfocused") as HTMLElement;
+		if (unfocused) {
+			unfocused.style.display = "block";
+			let promptBox = document.querySelector("#promptBox");
+			unfocused.addEventListener("click", function (event) {
 				if (event.target !== unfocused) {
 					return;
 				} else {
@@ -558,12 +569,12 @@ function prompt() {
 				}
 			},
 			false
-		);
-
-		// logo.style.margin = "0 2em"
-		promptBox.appendChild(logo);
-		promptBox.appendChild(instructionsPic);
-		promptBox.appendChild(instructions);
+			);
+			// logo.style.margin = "0 2em"
+			promptBox?.appendChild(logo);
+			promptBox?.appendChild(instructionsPic);
+			promptBox?.appendChild(instructions);
+		}
 	}
 }
 
@@ -597,10 +608,8 @@ function init() {
 	// if (counting === null) {
 	//     counting = false;
 	// }
-	if (button.addEventListener) {
+	if (button?.addEventListener) {
 		button.addEventListener("click", buttonPress, false);
-	} else if (button.attachEvent) {
-		button.attachEvent("onclick", buttonPress);
 	}
 }
 
@@ -608,8 +617,6 @@ function init() {
 
 if (window.addEventListener) {
 	window.addEventListener("load", init, false);
-} else if (window.attachEvent) {
-	window.attachEvent("onload", init);
 }
 
 // redo serviceworker and prompt();

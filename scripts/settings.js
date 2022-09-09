@@ -1,10 +1,10 @@
-var times = JSON.parse(localStorage.getItem("time"));
+let times = JSON.parse(localStorage.getItem("time"));
 
-for (var i in times) {
+for (let i in times) {
 }
 
 
-var reset = document.getElementById("reset");
+let reset = document.getElementById("reset");
 
 reset.addEventListener("click", resetTimes, false);
 
@@ -13,7 +13,7 @@ function resetTimes() {
     localStorage.removeItem("times");
 }
 
-var goalHours = []
+let goalHours = []
 for(let i=0; i<=30; i++) {
     goalHours.push(i);
 }
@@ -163,7 +163,7 @@ $("#input-5").AnyPicker(
     }]
   }],
   select: 18
-     
+
 
 });
 
@@ -173,4 +173,3 @@ $("#input-5").AnyPicker(
 
 if ('serviceWorker' in navigator) {
              navigator.serviceWorker.register('./sw.js').then(function(){console.log('Service Worker Registered');});}
-

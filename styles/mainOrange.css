@@ -221,19 +221,15 @@ h2#timer {
     display: flex;
 }
 
-/* chart times (under the dates on charts) */
-#time1, #time2, #time3, #time4, #time5, #time6, #time7 {
+.times {
+    /* display: block; */
+    
     display: inline-block;
     flex: 7;
     display: block;
     margin: 0 0.4em;
     width: 2em;
-        align-self: flex-end;
-
-}
-.times {
-    /* display: block; */
-    
+    align-self: flex-end;
     text-align: center;
     font-family: comfortaalight;
     letter-spacing: 0.05em;

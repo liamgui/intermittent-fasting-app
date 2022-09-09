@@ -228,7 +228,7 @@ h2#timer {
 }
 
 /* chart times (under the dates on charts) */
-#time1, #time2, #time3, #time4, #time5, #time6, #time7 {
+.times {
     /* display: inline-block; */
     /* flex: 7; */
     /* display: block; */

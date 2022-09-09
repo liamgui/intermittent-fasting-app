@@ -95,13 +95,13 @@ div#lineafter {
 }
 
 /* chart */
-div#chart {
+div.chart {
     height: 400px;
     margin: 0 auto;
     position: relative;
 }
 
-h2#timer {
+h2.timer {
     text-align: center;
     font-family: comfortaalight;
     color: #071D42;
@@ -214,11 +214,10 @@ h2#timer {
 }
 
 /* individual graphs */
+
 .graphDiv {
     width: 2em;
     margin: 0 0.4em;
-}
-#graph1, #graph2, #graph3, #graph4, #graph5, #graph6, #graph7 {
     background-color: #345691;
     /* width: 2em; */
     /* height: 0; */
@@ -263,18 +262,14 @@ h2#timer {
 }
 
 /* chart times (under the dates on charts) */
-#time1, #time2, #time3, #time4, #time5, #time6, #time7 {
+.times {
+    /* display: block; */
     display: inline-block;
     flex: 7;
     display: block;
     margin: 0 0.4em;
     width: 2em;
     align-self: flex-end;
-
-}
-.times {
-    /* display: block; */
-    
     text-align: center;
     font-family: comfortaalight;
     letter-spacing: 0.05em;
@@ -734,7 +729,7 @@ body.resources {
 
 @media only screen and (min-width: 411px) {
         /* Iphone call */
-    h2#timer {
+    h2.timer {
         text-align: center;
         font-family: comfortaalight;
         color: #071D42;

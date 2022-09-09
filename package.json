@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/liamgui/intermittent-fasting-app#readme",
   "dependencies": {
+    "air-datepicker": "^3.2.1",
     "vite": "^3.0.6"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.14"
   }
 }
