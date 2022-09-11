@@ -5,7 +5,6 @@ import preprocess from 'svelte-preprocess';
 
 const filePath = dirname(fileURLToPath(import.meta.url));
 const sassPath = `${filePath}/src/lib/style/`;
-console.log(sassPath);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -13,7 +12,7 @@ const config = {
 	// for more information about preprocessors
 	preprocess: preprocess({
 		scss: {
-			prependData: `@import '${sassPath}variables.scss'; @import '${sassPath}global.scss';`
+			prependData: `@import '${sassPath}variables.scss';`
 		}
 	}),
 

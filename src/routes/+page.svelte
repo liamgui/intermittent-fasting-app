@@ -1,29 +1,16 @@
-<script>
-	import logo from "$lib/assets/logo.png";
-	/** @type {import('./$types').PageData} */
-	// export let data;
+<script type="typescript">
+	const timer = "--:--:--";
 </script>
-
-<header>
-	<a href="/settings">settings</a>
-	<img src="{logo}" alt="logo"/>
-	<a href="/settings">resources</a>
-</header>
-<main></main>
-
+<main>
+	<div class="timer">{timer}</div>
+</main>
 
 <style lang="scss">
-	header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0 1rem;
-		background: $accent;
-	}
-	a {
-		color: white;
-	}
-	img {
-		width: 100px;
+	.timer {
+		margin-top: 1.25rem;
+		text-align: center;
+		font-size: 3.75rem;
+		letter-spacing: 3px;
+		font-weight: bold;
 	}
 </style>
